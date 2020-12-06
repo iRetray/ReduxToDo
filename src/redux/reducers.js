@@ -3,7 +3,7 @@ const initialState = {
   todos: [{ id: "", tittle: "", description: "", completed: false }],
 };
 
-export default todo = (state = initialState, action) => {
+const todo = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TODO":
       state.todos.push({
@@ -17,9 +17,12 @@ export default todo = (state = initialState, action) => {
         if (todo.id === action.id) {
           todo.completed = !todo.completed;
         }
+        return todo;
       });
-      return newState
+      return newState;
     default:
       return state;
   }
 };
+
+export default todo;
