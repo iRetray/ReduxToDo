@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import TittleApp from "./components/TittleApp";
+import ToDoList from "./components/ToDoList"
 
 function App() {
   return (
     <div>
-      Redux ToDo
+      <TittleApp />
+      <ToDoList />
     </div>
   );
 }
