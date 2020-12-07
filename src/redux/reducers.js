@@ -1,23 +1,25 @@
 const initialState = {
-  username: "",
-  todos: [{ id: "", tittle: "", description: "", completed: false }],
+  username: "Josefito",
+  todos: [],
 };
 
-const todo = (state = initialState, action) => {
-  switch (action.type) {
+// Data structure { id: "", tittle: "", description: "", completed: false }
+
+const todo = (action, state = initialState) => {
+  switch (action?.type) {
     case "ADD_TODO":
       state.todos.push({
-        id: state.todos.length,
+        id: state.todos.length + 1,
         tittle: action.tittle,
         description: action.description,
       });
       return state;
     case "TOGGLE_TODO":
-      const newState = state.map((todo) => {
-        if (todo.id === action.id) {
-          todo.completed = !todo.completed;
+      const newState = state.map(function (task) {
+        if (task.id === action.id) {
+          task.completed = !task.completed;
         }
-        return todo;
+        return task;
       });
       return newState;
     default:

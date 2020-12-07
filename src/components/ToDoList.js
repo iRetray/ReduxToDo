@@ -5,9 +5,7 @@ export default class ToDoList extends React.Component {
   render() {
     return (
       <div>
-        {ToDoList.map((todo) => {
-          return <ToDo />;
-        })}
+        todoList
       </div>
     );
   }

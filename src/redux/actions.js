@@ -8,7 +8,7 @@ export const addTodo = (tittle, description) => {
 
 export const toggleTodo = (id) => {
   return {
-    type: "ADD_TODO",
+    type: "TOGGLE_TODO",
     id,
   };
 };
