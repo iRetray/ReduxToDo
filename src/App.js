@@ -1,13 +1,15 @@
 import React from "react";
-import TittleApp from "./components/TittleApp";
-import ToDoList from "./components/ToDoList"
+import { Provider } from "react-redux";
+
+import ToDoList from "./components/Counter";
+
+import store from "./redux/store";
 
 function App() {
   return (
-    <div>
-      <TittleApp />
+    <Provider store={store}>
       <ToDoList />
-    </div>
+    </Provider>
   );
 }
 

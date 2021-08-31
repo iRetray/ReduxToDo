@@ -1,13 +1,8 @@
-import { createStore, combineReducers } from "redux";
-import toDo from "./reducers";
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./counterReducer";
 
-const allReducers = combineReducers({
-  toDo,
+export default configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
 });
-
-const store = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
-export default store;
